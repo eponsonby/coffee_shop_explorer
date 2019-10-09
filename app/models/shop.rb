@@ -1,4 +1,4 @@
 class Shop < ActiveRecord::Base
-    has_many :items
-    has_many :reviews, through: :users
+    has_many :reviews
+    has_many :users, through: :reviews
 end
