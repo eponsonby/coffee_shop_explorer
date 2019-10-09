@@ -6,7 +6,13 @@ Rails.application.routes.draw do
     resources :reviews, only: [:show, :index]
    end
 
+   resources :users, only: [:show] do
+    resources :favorites, only: [:show, :index]
+   end
+
+
    resources :reviews, only: [:index, :show, :new, :create, :edit, :update]
+   resources :favorites, only: [:index, :show, :new, :create, :edit, :update]
    resources :sessions, only: [:new, :create, :destroy]
 
    get '/login' => 'sessions#new', as: 'login'
