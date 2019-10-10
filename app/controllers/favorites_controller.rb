@@ -10,7 +10,7 @@ class FavoritesController < ApplicationController
     
     def show
         @favorite = Favorite.find(params[:id])
-        @shop_name = @favorite.shop.name
+        @shop_name = @favorite.favorite_shop.name
     end
 
 

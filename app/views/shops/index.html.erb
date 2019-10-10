@@ -1,0 +1,4 @@
+<% @shops.each do |shop| %>
+    <%= link_to shop.name, shop_path(shop) %>
+    <%= shop.reviews.last.content %>
+<% end %>
