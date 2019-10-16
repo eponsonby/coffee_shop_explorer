@@ -1,4 +1,7 @@
 <% @shops.each do |shop| %>
     <%= link_to shop.name, shop_path(shop) %>
-    <%= shop.reviews.last.content %>
+        <% if shop.reviews != [] %>
+            <%= shop.reviews.last.content %>
+        <% end %>
+    <br>
 <% end %>

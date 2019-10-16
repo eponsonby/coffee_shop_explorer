@@ -1,3 +1,8 @@
+Your Reviews
+<br>
 <% @reviews.each do |review| %>
+        <%= link_to review.shop.name, shop_path(review.shop) %>
+        <br>
         <%= review.content %>
+        <br>
 <% end %>

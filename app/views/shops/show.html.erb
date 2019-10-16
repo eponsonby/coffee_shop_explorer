@@ -1,0 +1,26 @@
+<%= @shop.name %>
+<br>
+<p>Neighborhood: <%= @shop.neighborhood %></p>
+
+<p>Seating: <%= @shop.seating %> </p>
+
+<p>Noise Level: <%= @shop.noise_level %></p>
+
+<p>Food: <%= @shop.food %></p>
+
+<p>Wifi: <%= @shop.wifi %></p>
+
+<p>Outlets: <%= @shop.outlets %></p>
+
+<p>Address:
+<% @shop.address.each do |key, value| %>
+    <%= value %>
+<% end %>
+</p>
+
+<p>Website: <%= @shop.website %></p>
+
+<p>All Reviews</p>
+<% @shop.reviews.each do |review| %>
+    <%= review.content %>
+<% end %>

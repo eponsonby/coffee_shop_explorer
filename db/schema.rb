@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_09_174333) do
+ActiveRecord::Schema.define(version: 2019_10_10_160932) do
 
   create_table "favorites", force: :cascade do |t|
     t.string "name"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 2019_10_09_174333) do
     t.string "food"
     t.boolean "wifi"
     t.boolean "outlets"
+    t.text "address"
+    t.string "website"
   end
 
   create_table "users", force: :cascade do |t|
