@@ -1,8 +1,7 @@
 Your Reviews
 <br>
 <% @reviews.each do |review| %>
-        <%= link_to review.shop.name, shop_path(review.shop) %>
-        <br>
-        <%= review.content %>
-        <br>
+        <p><%= link_to review.shop.name, shop_path(review.shop) %></p>
+        <p><%= truncate review.content, length: 100 %></p>
+        <p><%= link_to "See More", user_review_path(review.user_id, review.id) %></p>
 <% end %>
