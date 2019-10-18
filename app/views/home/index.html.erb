@@ -1,6 +1,38 @@
-<% @shops.each do |shop| %>
-    <%= link_to shop.name, shop_path(shop) %>
-    <p>Neighborhood: <%= shop.neighborhood %></p>
-    <p>Wifi? <%= human_boolean(shop.wifi) %></p>
-    <p>Outlets? <%= human_boolean(shop.outlets) %></p>
+<%= form_tag '', :method => :get do %>
+    <%= label_tag :wifi %>
+    <%= check_box_tag :wifi %>
+    <%= label_tag :outlets %>
+    <%= check_box_tag :outlets %>
+    <%= submit_tag "filter" %>
 <% end %>
+
+<div class="home_page_container">
+<div class="home_page_table">
+    <table>
+    <% @shops.each do |shop| %>
+    <tr>
+        <td colspan="2" class="shop-name"><%= link_to shop.name, shop_path(shop) %></td>
+    <tr>
+    </div>
+        <td class="label">Neighborhood:</td>
+        <td><%= shop.neighborhood %></td>
+    </tr>
+    <tr>
+        <td><span class="label">Wifi: </span><%= human_boolean(shop.wifi) %></td>
+        <td><span class="label">Outlets: </span><%= human_boolean(shop.outlets) %></td>
+    </tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+<% end %>
+    </table>
+
+</div>
+</div>

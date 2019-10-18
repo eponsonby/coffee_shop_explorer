@@ -1,8 +1,10 @@
 <p>Name:</p>
 <%= @user.name %>
 <p>Location:</p>
-<%= @user.location %>
+<%= @user.neighborhood %>
 <br>
 <%= @user.reviews.count %> Reviews
 <br>
-<%= link_to "Reviews", user_reviews_path(@user) %>
+<%= link_to "Your Reviews", user_reviews_path(@user) %>
+<%= link_to "Edit Profile", edit_user_registration_path %>
+<%= link_to "Your Favorites", user_favorites_path(current_user) %>

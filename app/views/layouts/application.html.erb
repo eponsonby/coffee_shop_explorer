@@ -7,15 +7,15 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
   </head>
 
 
   <body>
   <% if user_signed_in? %>
     <%= link_to "Home", authenticated_root_path %>
-    <%= link_to "My Reviews", user_reviews_path(current_user) %>
-    <%= link_to "My Favorites", user_favorites_path(current_user) %>
-    <%= link_to "Edit profile", edit_user_registration_path %> |
+    <%= link_to "Profile", user_path(current_user) %>
     <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
   <% else %>
     <%= link_to "Sign up", new_user_registration_path  %> |
