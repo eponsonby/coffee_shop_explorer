@@ -17,3 +17,35 @@
  html {
      background-color: #FFFFFF;
  }
+
+ .logged_in_nav {
+    float: right
+ }
+
+ .logged_in_nav a {
+    float: left;
+    color: #353535;
+    text-align: center;
+    text-decoration: none;
+    padding-right: 10px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.title {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    color: #353535;
+}
+
+.title_container {
+    text-align: center;
+    clear: right;
+    margin-bottom: 25px;    
+}
+

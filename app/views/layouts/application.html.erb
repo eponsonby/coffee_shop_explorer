@@ -7,12 +7,14 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:900&display=swap" rel="stylesheet">
   </head>
 
 
   <body>
+  <div class="logged_in_nav">
   <% if user_signed_in? %>
     <%= link_to "Home", authenticated_root_path %>
     <%= link_to "Profile", user_path(current_user) %>
@@ -21,10 +23,13 @@
     <%= link_to "Sign up", new_user_registration_path  %> |
     <%= link_to "Login", new_user_session_path  %>
   <% end %>
+  </div>
 
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-
+<div class="title_container">
+<div class="title">District Coffee</div>
+</div>
     <%= yield %>
   </body>
 </html>
