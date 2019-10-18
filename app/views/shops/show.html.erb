@@ -1,5 +1,6 @@
+<%= link_to "Edit this shop", edit_shop_path(@shop) %>
+
 <%= @shop.name %>
-<br>
 <p>Neighborhood: <%= @shop.neighborhood %></p>
 
 <p>Seating: <%= @shop.seating %> </p>
@@ -8,9 +9,9 @@
 
 <p>Food: <%= @shop.food %></p>
 
-<p>Wifi: <%= @shop.wifi %></p>
+<p>Wifi: <%= human_boolean(@shop.wifi) %></p>
 
-<p>Outlets: <%= @shop.outlets %></p>
+<p>Outlets: <%= human_boolean(@shop.outlets) %></p>
 
 <p>Address:
 <% @shop.address.each do |key, value| %>

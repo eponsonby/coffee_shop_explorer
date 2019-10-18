@@ -1,0 +1,42 @@
+<%= form_with model: @shop, class: "edit_form" do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :neighborhood %>
+    <%= f.select(:neighborhood, options_for_select([
+        ['Adams Morgan'],
+        ['Bloomingdale'],
+        ['Brookland'],
+        ['Capitol Hill'],
+        ['Chinatown'],
+        ['Cleveland Park'],
+        ['Columbia Heights'],
+        ['Downtown'],
+        ['Dupont Circle'],
+        ['Eckington'],
+        ['Friendship Heights'],
+        ['Foggy Bottom'],
+        ['Georgetown'],
+        ['Glover Park'],
+        ['Ivy City'],
+        ['LeDroit Park'],
+        ['Logan Circle'],
+        ['Mount Pleasant'],
+        ['Mount Vernon Square'],
+        ['Navy Yard'],
+        ['NoMa'],
+        ['Penn Quarter'],
+        ['Petworth'],
+        ['Shaw'],
+        ['Trinidad'],
+        ['U Street'],
+        ['West End'],
+        ['Woodley Park']])) %>
+    <%= f.label :seating %>
+    <%= f.select(:seating, options_for_select([['Ample'], ['Limited']])) %>
+    <%= f.select(:food, options_for_select([['Full menu'], ['Grab and go'], ['Pastries only']])) %>
+    <%= f.label :wifi %>
+    <%= f.check_box :wifi %>
+    <%= f.label :outlets %>
+    <%= f.check_box :outlets %>
+    <%= f.submit "Update Coffee Shop" %>
+<% end %>

@@ -1,3 +1,7 @@
-<% @favorites.each do |favorite| %>
-        <%= favorite.name %>
+
+<% @shops.each do |shop| %>
+        <%= shop.name if shop.favorites != [] %>
+        <% shop.favorites.each do |favorite| %>
+                <%= favorite.name if favorite.user.id = current_user.id %>
+        <% end %>
 <% end %>
