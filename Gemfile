@@ -60,3 +60,7 @@ gem "omniauth", "~> 1.9"
 gem "omniauth-facebook", "~> 5.0"
 
 gem "dotenv-rails", "~> 2.7"
+
+gem "devise", "~> 4.7"
+
+gem "pry", "~> 0.12.2"

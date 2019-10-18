@@ -1,0 +1,6 @@
+<% @shops.each do |shop| %>
+    <%= link_to shop.name, shop_path(shop) %>
+    <p>Neighborhood: <%= shop.neighborhood %></p>
+    <p>Wifi? <%= human_boolean(shop.wifi) %></p>
+    <p>Outlets? <%= human_boolean(shop.outlets) %></p>
+<% end %>

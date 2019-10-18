@@ -17,7 +17,7 @@ Shop.create(name: "The Coffee Bar" , neighborhood: "Shaw", seating: "Ample", foo
 Shop.create(name: "Slipstream" , neighborhood: "Logan Circle", seating: "Ample", food: "Full Menu", wifi: true, outlets: true, address:{"Street" => "1333 14th Street NW", "City" => "Washington, DC", "Zip Code" => "20005"}, website: "http://slipstreamdc.com/")
 Shop.create(name: "Three Fifty Bakery and Coffee Bar" , neighborhood: "U Street", seating: "Limited", food: "Grab and Go", wifi: true, outlets: true, address:{"Street" => "1926 17th Street NW", "City" => "Washington, DC", "Zip Code" => "20009"}, website: "http://threefifty.com/")
 
-User.create(username: "erin", email: "erin@gmail.com", password: "password", name: "Erin", location: "Columbia Heights")
+User.create(name: "erin", email: "erin@gmail.com", password: "password", neighborhood: "Columbia Heights")
 
 
 Review.create(content: "Single shot instant steamed rich single shot con panna filter. Barista, half and half milk, pumpkin spice extra half and half aged frappuccino robusta organic. Coffee mug wings spoon, aged sugar crema aftertaste siphon barista robust dripper. Froth foam seasonal aroma medium cream extra.", user_id: 1, shop_id: 2)
@@ -30,3 +30,8 @@ Review.create(content: "Half and half frappuccino mug sweet breve roast rich. Ex
 Review.create(content: "Spoon filter, caffeine percolator arabica and sweet. Iced redeye sugar, a, at, organic wings sweet latte to go so breve. Dark, organic dark decaffeinated aftertaste as decaffeinated to go. Kopi-luwak strong.", user_id: 1, shop_id: 8)
 Review.create(content: "Plunger pot eu, cup siphon a con panna fair trade percolator fair trade macchiato. Crema coffee eu, a pumpkin spice a chicory extra skinny seasonal. Ut, body robusta latte breve percolator decaffeinated. Cream spoon, aged instant, ristretto, cortado cinnamon, a caffeine americano affogato java. Blue mountain breve skinny trifecta, percolator irish, instant filter eu dark turkish.", user_id: 1, shop_id: 9)
 Review.create(content: "Skinny in whipped, organic kopi-luwak caffeine percolator instant. Black robusta beans, plunger pot café au lait, medium aftertaste and frappuccino plunger pot. Mug kopi-luwak, bar, iced, barista americano qui decaffeinated single origin. Aroma coffee café au lait and extra crema grinder milk. Aroma, aftertaste aged bar to go as qui fair trade espresso roast.", user_id: 1, shop_id: 10)
+
+Favorite.create(name: "Cold brew", shop_id: 1,  user_id: 1)
+Favorite.create(name: "Espresso", shop_id: 2,  user_id: 1)
+Favorite.create(name: "Drip", shop_id: 3,  user_id: 1)
+

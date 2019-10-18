@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-   resources :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+  authenticated :user do
+    root 'home#index', as: 'authenticated_root'
+  end
+
+  devise_scope :user do
+    root 'devise/sessions#new'
+  end
+
+
    resources :shops
    
    resources :users, only: [:show] do
@@ -14,12 +24,4 @@ Rails.application.routes.draw do
 
    resources :reviews, only: [:index, :show, :new, :create, :edit, :update]
    resources :favorites, only: [:index, :show, :new, :create, :edit, :update]
-   resources :sessions, only: [:new, :create, :destroy]
-
-   get '/login' => 'sessions#new', as: 'login'
-   post '/login' => 'sessions#create'
-   delete '/logout' => 'sessions#destroy'
-
-   get '/auth/facebook/callback' => 'sessions#create'
-
 end
