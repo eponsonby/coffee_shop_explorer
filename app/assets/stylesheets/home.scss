@@ -13,7 +13,8 @@ table {
     width: 30%;
     font-family: 'Roboto Slab', serif;
     font-size: 15px;
-    color: #353535
+    color: #353535;
+    text-align: left;
 }
 
 table .shop-name a:link, a:visited  {
@@ -27,4 +28,9 @@ table .shop-name a:link, a:visited  {
 table .label {
     font-weight: bold;
     color:#A88C20;
+}
+
+.home_page_filter {
+    border: 1px solid black;
+    width: 7%;
 }

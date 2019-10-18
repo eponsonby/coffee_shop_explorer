@@ -1,10 +1,25 @@
+<table class="home_page_filter">
 <%= form_tag '', :method => :get do %>
+<tr>
+    <td>
     <%= label_tag :wifi %>
     <%= check_box_tag :wifi %>
+    <td>
+</tr>
+<tr>
+    <td>
     <%= label_tag :outlets %>
     <%= check_box_tag :outlets %>
+    </td>
+</tr>
+<tr>
+    <td>
     <%= submit_tag "filter" %>
+    </td>
+</tr>
 <% end %>
+
+</table>
 
 <div class="home_page_container">
 <div class="home_page_table">
@@ -36,3 +51,4 @@
 
 </div>
 </div>
+
