@@ -22,6 +22,6 @@ Rails.application.routes.draw do
    end
 
 
-   resources :reviews, only: [:index, :show, :new, :create, :edit, :update]
-   resources :favorites, only: [:index, :show, :new, :create, :edit, :update]
+   resources :reviews, only: [:show, :new, :create, :edit, :update]
+   resources :favorites, only: [:new, :create, :edit, :update]
 end

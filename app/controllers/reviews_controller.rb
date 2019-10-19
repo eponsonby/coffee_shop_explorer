@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
     def index
-        @reviews = User.find_by(id: params[:user_id]).reviews
+        @reviews = User.find_by(id: current_user.id).reviews
     end
 
     def show
