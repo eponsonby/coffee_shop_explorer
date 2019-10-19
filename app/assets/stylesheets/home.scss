@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .home_page_container {
-    clear: both;
     width: 85%;
     margin: 0 auto;
 }
@@ -31,6 +30,8 @@ table .label {
 }
 
 .home_page_filter {
-    border: 1px solid black;
-    width: 7%;
+    width: 10%;
+    float: left;
+    font-family: 'Roboto Slab', serif;
+    color: #353535;
 }
