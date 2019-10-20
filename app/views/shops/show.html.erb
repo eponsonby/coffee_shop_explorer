@@ -1,27 +1,68 @@
+<div class="shop_info_container">
+<table class="shop_info_table_left">
+<tr>
+    <td class="shop_name">
+    <%= @shop.name %>
+    </td>
+</tr>
+<tr>
+    <td>
+    <%= link_to @shop.website, @shop.website %>
+    </td>
+</tr>
 
-<%= @shop.name %>
+<tr> 
+    <td>
+    <% @shop.address.each do |key, value| %>
+        <%= value %>
+    <% end %>
+    </td>
+</tr>
 
-<% @shop.address.each do |key, value| %>
-    <%= value %>
-<% end %>
+</table>
 
+<table class="shop_info_table_right">
+<tr>
+    <td>
+    <span class="category_name">Neighborhood:</span> <%= @shop.neighborhood %>
+    </td>
 
-<%= @shop.website %>
+    <td>
+    <span class="category_name">Wifi: </span><%= human_boolean(@shop.wifi) %>
+    </td>
+</tr>
 
-<p>Neighborhood: <%= @shop.neighborhood %></p>
+<tr>
+    <td>
+    <span class="category_name">Seating: </span><%= @shop.seating %>
+    </td>
+    <td>
+    <span class="category_name">Outlets: </span><%= human_boolean(@shop.outlets) %>
+    </td>
+</tr>
 
-<p>Seating: <%= @shop.seating %> </p>
+<tr>
+    <td>
+    <span class="category_name">Food: </span><%= @shop.food %>
+    </td>
 
-<p>Food: <%= @shop.food %></p>
+    <td>
+    <%= link_to "Edit this shop", edit_shop_path(@shop) %>
+    </td>
 
-<p>Wifi: <%= human_boolean(@shop.wifi) %></p>
+</tr>
 
-<p>Outlets: <%= human_boolean(@shop.outlets) %></p>
+</table>
+</div>
 
-
-<p>All Reviews</p>
-<% @shop.reviews.each do |review| %>
-    <%= review.content %>
-<% end %>
-
-<%= link_to "Edit this shop", edit_shop_path(@shop) %>
+<div class="reviews_container">
+<table class="reviews_table">
+    <tr>
+        <td>
+        <% @shop.reviews.each do |review| %>
+            <%= review.content %>
+        <% end %>
+        </td>
+    </tr>
+</table>
+</div>

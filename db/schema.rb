@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_18_123627) do
+ActiveRecord::Schema.define(version: 2019_10_20_225327) do
 
   create_table "favorites", force: :cascade do |t|
     t.string "name"
@@ -28,12 +28,14 @@ ActiveRecord::Schema.define(version: 2019_10_18_123627) do
     t.string "name"
     t.string "neighborhood"
     t.string "seating"
-    t.string "noise_level"
     t.string "food"
     t.boolean "wifi"
     t.boolean "outlets"
-    t.text "address"
+    t.text "address_street"
     t.string "website"
+    t.string "address_city"
+    t.string "address_state"
+    t.string "address_zipcode"
   end
 
   create_table "users", force: :cascade do |t|

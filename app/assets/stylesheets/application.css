@@ -49,3 +49,41 @@
     margin-bottom: 25px;    
 }
 
+.shop_info_container {
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+.shop_info_table_left {
+    float: left;
+}
+
+.shop_info_table_right {
+    clear: right;
+}
+
+.shop_info_table_right td, .shop_info_table_left td {
+    padding-bottom: 10px;
+}
+
+.shop_name {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #353535;
+}
+
+.category_name {
+    font-weight: 900;
+    font-family: 'Roboto Slab', serif;
+}
+
+.reviews_container {
+    margin-left: 100px;
+}
+
+.reviews_table {
+    width: 60%;
+    margin-top: 20px;
+
+}

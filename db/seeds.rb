@@ -6,18 +6,133 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Shop.create(name: "A Baked Joint", neighborhood: "Mount Vernon Square", seating: "Ample", food: "Full menu", wifi: false, outlets: true, address:{"Street" => "440 K NW", "City" => "Washington, DC", "Zip Code" => "20001"}, website: "https://abakedjoint.com/")
-Shop.create(name: "The Royal", neighborhood: "LeDroit Park", seating: "Limited", food: "Full Menu", wifi: true, outlets: true, address:{"Street" => "501 Florida Avenue NW", "City" => "Washington, DC", "Zip Code" => "20001"}, website: "http://www.theroyaldc.com/")
-Shop.create(name: "Compass Coffee" , neighborhood: "Shaw", seating: "Limited", food: "Grab and Go", wifi: true, outlets: true, address:{"Street" => "1921 8th Street NW", "City" => "Washington, DC", "Zip Code" => "20001"}, website: "https://www.compasscoffee.com/")
-Shop.create(name: "Compass Coffee" , neighborhood: "Shaw", seating: "Ample", food: "Grab and Go", wifi: true, outlets: true, address:{"Street" => "1535 7th Street NW", "City" => "Washington, DC", "Zip Code" => "20001"}, website: "https://www.compasscoffee.com/")
-Shop.create(name: "Tynan Coffee & Tea" , neighborhood: "Columbia Heights", seating: "Ample", food: "Full menu", wifi: true, outlets: true, address:{"Street" => "1400 Irving Street NW", "City" => "Washington, DC", "Zip Code" => "20010"}, website: "https://tynancoffeeandtea.com/")
-Shop.create(name: "Tryst" , neighborhood: "Adams Morgan", seating: "Ample", food: "Full Menu", wifi: true, outlets: true, address:{"Street" => "2459 18th Street NW", "City" => "Washington, DC", "Zip Code" => "20009"}, website: "trystdc.com")
-Shop.create(name: "The Wydown" , neighborhood: "14th Street", seating: "Limited", food: "Grab and Go", wifi: false, outlets: true, address:{"Street" => "1924 14th Street NW", "City" => "Washington, DC", "Zip Code" => "20009"}, website: "https://thewydown.com/")
-Shop.create(name: "The Coffee Bar" , neighborhood: "Shaw", seating: "Ample", food: "Grab and Go", wifi: true, outlets: true, address:{"Street" => "1201 S Street NW", "City" => "Washington, DC", "Zip Code" => "20009"}, website: "https://www.thecoffeebardc.com")
-Shop.create(name: "Slipstream" , neighborhood: "Logan Circle", seating: "Ample", food: "Full Menu", wifi: true, outlets: true, address:{"Street" => "1333 14th Street NW", "City" => "Washington, DC", "Zip Code" => "20005"}, website: "http://slipstreamdc.com/")
-Shop.create(name: "Three Fifty Bakery and Coffee Bar" , neighborhood: "U Street", seating: "Limited", food: "Grab and Go", wifi: true, outlets: true, address:{"Street" => "1926 17th Street NW", "City" => "Washington, DC", "Zip Code" => "20009"}, website: "http://threefifty.com/")
+Shop.create(
+    name: "A Baked Joint",
+    neighborhood: "Mount Vernon Square",
+    seating: "Ample",
+    food: "Full menu",
+    wifi: false,
+    outlets: true,
+    address_street: "440 K NW",
+    address_city: "Washington",
+    address_state: "DC",
+    address_zipcode: "20001",
+    website: "https://abakedjoint.com/")
+Shop.create(
+    name: "The Royal", 
+    neighborhood: "LeDroit Park",
+    seating: "Limited",
+    food: "Full Menu",
+    wifi: true,
+    outlets: true,
+    address_street: "501 Florida Avenue NW",
+    address_city: "Washington",
+    address_state: "DC",
+    address_zipcode: "20001",
+    website: "http://www.theroyaldc.com/")
+Shop.create(
+    name: "Compass Coffee",
+    neighborhood: "Shaw",
+    seating: "Limited",
+    food: "Grab and Go",
+    wifi: true,
+    outlets: true,
+    address_street: "1921 8th Street NW",
+    address_city: "Washington",
+    address_state: "DC",
+    address_zipcode: "20001",
+    website: "https://www.compasscoffee.com/")
 
-User.create(name: "erin", email: "erin@gmail.com", password: "password", neighborhood: "Columbia Heights")
+Shop.create(
+    name: "Compass Coffee",
+    neighborhood: "Shaw",
+    seating: "Ample",
+    food: "Grab and Go",
+    wifi: true,
+    outlets: true,
+    address_street: "1535 7th Street NW",
+    address_city: "Washington",
+    address_state: "DC",
+    address_zipcode: "20001",
+    website: "https://www.compasscoffee.com/")
+
+Shop.create(
+    name: "Tynan Coffee & Tea",
+    neighborhood: "Columbia Heights",
+    seating: "Ample",
+    food: "Full menu",
+    wifi: true,
+    outlets: true,
+    address_street: "1400 Irving Street NW",
+    address_city: "Washington",
+    address_state: "DC",
+    address_zipcode: "20010",
+    website: "https://tynancoffeeandtea.com/")
+
+Shop.create(
+    name: "Tryst", 
+    neighborhood: "Adams Morgan", 
+    seating: "Ample", 
+    food: "Full Menu", 
+    wifi: true, 
+    outlets: true, 
+    address_street: "2459 18th Street NW",
+    address_city: "Washington",
+    address_state: "DC",
+    address_zipcode: "20009", 
+    website: "trystdc.com")
+Shop.create(
+    name: "The Wydown", 
+    neighborhood: "14th Street", 
+    seating: "Limited", 
+    food: "Grab and Go", 
+    wifi: false, 
+    outlets: true, 
+    address_street: "1924 14th Street NW",
+    address_city: "Washington",
+    address_state: "DC",
+    address_zipcode: "20009", 
+    website: "https://thewydown.com/")
+Shop.create(
+    name: "The Coffee Bar", 
+    neighborhood: "Shaw", 
+    seating: "Ample", 
+    food: "Grab and Go", 
+    wifi: true, 
+    outlets: true, 
+    address_street: "1201 S Street NW",
+    address_city: "Washington",
+    address_state: "DC",
+    address_zipcode: "20009", 
+    website: "https://www.thecoffeebardc.com")
+Shop.create(
+    name: "Slipstream", 
+    neighborhood: "Logan Circle", 
+    seating: "Ample", 
+    food: "Full Menu", 
+    wifi: true, 
+    outlets: true, 
+    address_street: "1333 14th Street NW",
+    address_city: "Washington",
+    address_state: "DC",
+    address_zipcode: "20005", 
+    website: "http://slipstreamdc.com/")
+Shop.create(
+    name: "Three Fifty Bakery and Coffee Bar", 
+    neighborhood: "U Street", 
+    seating: "Limited", 
+    food: "Grab and Go", 
+    wifi: true, 
+    outlets: true, 
+    address_street: "1926 17th Street NW",
+    address_city: "Washington",
+    address_state: "DC",
+    address_zipcode: "20009", 
+    website: "http://threefifty.com/")
+
+User.create(
+    name: "erin", email: "erin@gmail.com", password: "password", 
+    neighborhood: "Columbia Heights")
 
 
 Review.create(content: "Single shot instant steamed rich single shot con panna filter. Barista, half and half milk, pumpkin spice extra half and half aged frappuccino robusta organic. Coffee mug wings spoon, aged sugar crema aftertaste siphon barista robust dripper. Froth foam seasonal aroma medium cream extra.", user_id: 1, shop_id: 2)

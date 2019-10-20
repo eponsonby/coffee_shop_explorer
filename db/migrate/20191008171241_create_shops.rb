@@ -4,7 +4,6 @@ class CreateShops < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :neighborhood
       t.string :seating
-      t.string :noise_level
       t.string :food
       t.boolean :wifi
       t.boolean :outlets
