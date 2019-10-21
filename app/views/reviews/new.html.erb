@@ -1,0 +1,10 @@
+<%= form_with model: @review, url: user_reviews_path, class: "new_review_form" do |f| %>
+    <% options = options_from_collection_for_select(@shops, 'id', 'name') %>
+    <%= f.select :shop_id, options %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+    <%= f.hidden_field :user_id, value: @user.id %>
+    <%= f.submit "Submit Review" %>
+<% end %>

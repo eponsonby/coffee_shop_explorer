@@ -4,6 +4,23 @@ class ReviewsController < ApplicationController
         @reviews = User.find_by(id: current_user.id).reviews
     end
 
+    def new
+        @review = Review.new
+        @user = current_user
+        @shops = Shop.all
+    end
+
+    def create
+        @review = Review.new(review_params)
+        @shop = Shop.find_by(id: params[:review][:shop_id])
+        if @review.save
+            redirect_to shop_path(@shop)
+        else
+            render :new
+        end
+    end
+
+
     def show
         @review = Review.find_by(id: params[:id])
     end
@@ -14,13 +31,20 @@ class ReviewsController < ApplicationController
 
     def update
         @review = Review.find_by(id: params[:id])
-        @review.update(content: params[:review][:content])
-        redirect_to review_path(@review)
+        @review.update(title: params[:review][:title], content: params[:review][:content])
+        redirect_to user_reviews_path(current_user.id)
     end
+
+    def destroy
+        @review = Review.find_by(id: params[:id])
+        @review.destroy
+        redirect_to user_reviews_path(current_user.id)
+    end
+
 
     private
     def review_params
-        params.require(:review).permit(:content)
+        params.require(:review).permit(:title, :content, :shop_id, :user_id)
     end
     
 

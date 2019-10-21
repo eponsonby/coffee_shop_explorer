@@ -10,18 +10,15 @@ Rails.application.routes.draw do
     root 'devise/sessions#new'
   end
 
-
-   resources :shops
    
    resources :users, only: [:show] do
-    resources :reviews, only: [:show, :index]
+    resources :reviews, only: [:show, :index, :new, :create, :edit, :update, :destroy]
    end
 
    resources :users, only: [:show] do
     resources :favorites, only: [:show, :index]
    end
 
-
-   resources :reviews, only: [:show, :new, :create, :edit, :update]
+   resources :shops, only: [:show, :new, :create, :edit, :update]
    resources :favorites, only: [:new, :create, :edit, :update]
 end

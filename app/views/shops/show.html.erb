@@ -13,9 +13,19 @@
 
 <tr> 
     <td>
-    <% @shop.address.each do |key, value| %>
-        <%= value %>
-    <% end %>
+    <%= @shop.address_street %>
+    </td>
+</tr>
+
+<tr> 
+    <td>
+    <%= @shop.address_city %>
+    </td>
+    <td>
+    <%= @shop.address_state %>
+    </td>
+    <td>
+    <%= @shop.address_zipcode %>
     </td>
 </tr>
 
@@ -47,7 +57,7 @@
     </td>
 
     <td>
-    <%= link_to "Edit this shop", edit_shop_path(@shop) %>
+    <%= link_to "Edit", edit_shop_path(@shop) %>
     </td>
 
 </tr>
@@ -55,12 +65,15 @@
 </table>
 </div>
 
+<%= link_to "Leave a Review", new_user_review_path(@user) %>
+
 <div class="reviews_container">
 <table class="reviews_table">
-    <tr>
         <td>
         <% @shop.reviews.each do |review| %>
+            <%= review.title %>
             <%= review.content %>
+            <%= review.user.name %>
         <% end %>
         </td>
     </tr>

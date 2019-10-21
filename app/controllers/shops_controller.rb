@@ -18,8 +18,8 @@ class ShopsController < ApplicationController
     end
 
 
-
     def show
+        @user = current_user
         @shop = Shop.find_by(id: params[:id])
     end
 

@@ -3,5 +3,6 @@ Your Reviews
 <% @reviews.each do |review| %>
         <p><%= link_to review.shop.name, shop_path(review.shop) %></p>
         <p><%= review.content %></p>
-        <p><%= link_to "Edit Review", edit_review_path(review) %></p>
+        <p><%= link_to "Edit Review", edit_user_review_path(current_user.id , review) %></p>
+        <p><%= link_to "Delete Review", user_review_path(current_user.id , review), method: :delete %></p>
 <% end %>
