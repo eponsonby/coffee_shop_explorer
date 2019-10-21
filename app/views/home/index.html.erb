@@ -20,11 +20,16 @@
 </tr>
 <% end %>
 
+<tr>
+    <td>
+        <%= link_to "Create New Coffee Shop", new_shop_path %>
+    </td>
+</tr>
 </table>
 
 <div class="home_page_table">
     <table>
-    <% @shops.each do |shop| %>
+    <% @shops.order("LOWER(name)").each do |shop| %>
     <tr>
         <td colspan="2" class="shop-name"><%= link_to shop.name, shop_path(shop) %></td>
     <tr>
