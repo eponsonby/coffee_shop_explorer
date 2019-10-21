@@ -1,0 +1,8 @@
+<%= form_with model: @favorite, url: user_favorites_path, class: "new_favorite_form" do |f| %>
+    <% options = options_from_collection_for_select(@shops, 'id', 'name') %>
+    <%= f.select :shop_id, options %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+     <%= f.hidden_field :user_id, value: @user.id %>
+    <%= f.submit "Create Favorite" %>
+<% end %>

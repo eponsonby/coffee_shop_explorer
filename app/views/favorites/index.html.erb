@@ -1,6 +1,10 @@
 <% @shops.each do |shop| %>
-        <%= shop.name if shop.favorites != [] %>
         <% shop.favorites.each do |favorite| %>
+                <%= shop.name if shop.favorites != [] %>
                 <%= favorite.name if favorite.user.id = current_user.id %>
+                <%= link_to "Edit Favorite", edit_user_favorite_path(current_user.id, favorite.id) %>
+                <%= link_to "Delete Favorite", user_favorite_path(current_user.id , favorite), method: :delete %></p>
         <% end %>
 <% end %>
+
+<%= link_to "New Favorite", new_user_favorite_path(current_user.id) %>
