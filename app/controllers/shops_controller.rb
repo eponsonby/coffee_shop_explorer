@@ -10,7 +10,8 @@ class ShopsController < ApplicationController
 
     def create
         @shop = Shop.new(shop_params)
-        if @shop.save
+        if @shop.valid?
+            @shop.save
             redirect_to shop_path(@shop)
         else
             render :new
@@ -28,20 +29,13 @@ class ShopsController < ApplicationController
 
     def update
         @shop = Shop.find_by(id: params[:id])
-        @shop.update(
-            name: params[:shop][:name], 
-            website: params[:shop][:website],
-            address_street: params[:shop][:address_street],
-            address_city: params[:shop][:address_city],
-            address_state: params[:shop][:address_state],
-            address_zipcode: params[:shop][:address_zipcode],
-            neighborhood: params[:shop][:neighborhood], 
-            seating: params[:shop][:seating], 
-            food: params[:shop][:food], 
-            wifi: params[:shop][:wifi], 
-            outlets: params[:shop][:outlets]
-        )
-        redirect_to shop_path(@shop)
+        @shop.update(shop_params)
+        if @shop.valid?
+            @shop.save
+            redirect_to shop_path(@shop)
+        else
+            render :edit
+        end
     end
 
     private
@@ -60,9 +54,6 @@ class ShopsController < ApplicationController
             :address_zipcode
         )
     end
-
-
-
 
 
 end

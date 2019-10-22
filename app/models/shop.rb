@@ -3,7 +3,7 @@ class Shop < ActiveRecord::Base
     has_many :favorites
     has_many :users, through: :reviews
     has_many :users, through: :favorites
-    validates :name, uniqueness: true
+    validates :address_street, uniqueness: true
     validates :name, presence: true
     validates :website, presence: true
     validates :address_street, presence: true

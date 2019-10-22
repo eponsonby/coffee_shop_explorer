@@ -19,13 +19,7 @@
 
 <tr> 
     <td>
-    <%= @shop.address_city %>
-    </td>
-    <td>
-    <%= @shop.address_state %>
-    </td>
-    <td>
-    <%= @shop.address_zipcode %>
+    <%= @shop.address_city %> <%= @shop.address_state %> <%= @shop.address_zipcode %>
     </td>
 </tr>
 
@@ -62,18 +56,21 @@
 
 </tr>
 
+<tr>
+    <td><%= link_to "Leave a Review", new_user_review_path(@user) %></td>
+</tr>
+
 </table>
 </div>
 
-<%= link_to "Leave a Review", new_user_review_path(@user) %>
 
 <div class="reviews_container">
 <table class="reviews_table">
         <td>
         <% @shop.reviews.each do |review| %>
-            <%= review.title %>
-            <%= review.content %>
-            <%= review.user.name %>
+            <h3><%= review.title %></h3>
+            <p><%= review.content %></p>
+            <p><%= review.user.name %></p>
         <% end %>
         </td>
     </tr>

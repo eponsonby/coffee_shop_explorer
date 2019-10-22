@@ -1,18 +1,30 @@
 <%= form_with model: @shop, class: "new_form" do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name, required: true%>
-    <%= f.label :website %>
-    <%= f.text_field :website, required: true %>
-    <%= f.label :address_street, "Street" %>
-    <%= f.text_field :address_street, required: true %>
-    <%= f.label :address_city, "City" %>
-    <%= f.text_field :address_city, required: true %>
-    <%= f.label :address_state, "State"  %>
-    <%= f.text_field :address_state, required: true %>
-    <%= f.label :address_zipcode, "Zipcode" %>
-    <%= f.text_field :address_zipcode, required: true %>
-    <%= f.label :neighborhood %>
-    <%= f.select(:neighborhood, options_for_select([
+
+<% if @shop.errors.any? %>
+<div id="error_explanation">
+    <ul>
+        <% @shop.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
+</div>
+
+    <p><%= f.label :name %></p>
+    <p><%= f.text_field :name, required: true%></p>
+    <p><%= f.label :website %></p>
+    <p><%= f.text_field :website, required: true %></p>
+    <h4>Address</h4>
+    <p><%= f.label :address_street, "Street" %></p>
+    <p><%= f.text_field :address_street, required: true %></p>
+    <p><%= f.label :address_city, "City" %></p>
+    <p><%= f.text_field :address_city, required: true %></p>
+    <p><%= f.label :address_state, "State"  %></p>
+    <p><%= f.text_field :address_state, required: true %></p>
+    <p><%= f.label :address_zipcode, "Zipcode" %></p>
+    <p><%= f.text_field :address_zipcode, required: true %></p>
+    <p><%= f.label :neighborhood %></p>
+    <p><%= f.select(:neighborhood, options_for_select([
         ['Adams Morgan'],
         ['Bloomingdale'],
         ['Brookland'],
@@ -40,13 +52,14 @@
         ['Trinidad'],
         ['U Street'],
         ['West End'],
-        ['Woodley Park']])) %>
-    <%= f.label :seating %>
-    <%= f.select(:seating, options_for_select([['Ample'], ['Limited']])) %>
-    <%= f.select(:food, options_for_select([['Full menu'], ['Grab and go'], ['Pastries only']])) %>
-    <%= f.label :wifi %>
-    <%= f.check_box :wifi %>
-    <%= f.label :outlets %>
-    <%= f.check_box :outlets %>
+        ['Woodley Park']])) %></p>
+    <p><%= f.label :seating %></p>
+    <p><%= f.select(:seating, options_for_select([['Ample'], ['Limited']])) %></p>
+    <p><%= f.label :food %></p>
+    <p><%= f.select(:food, options_for_select([['Full menu'], ['Grab and go'], ['Pastries only']])) %></p>
+    <p><%= f.label :wifi %></p>
+    <p><%= f.check_box :wifi %></p>
+    <p><%= f.label :outlets %></p>
+    <p><%= f.check_box :outlets %></p>
     <%= f.submit "Create Coffee Shop" %>
 <% end %>
