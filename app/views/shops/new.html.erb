@@ -1,5 +1,4 @@
-<%= form_with model: @shop, class: "new_form" do |f| %>
-
+<%= form_with model: @shop, class: "new_shop_form", local: true do |f| %>
 <% if @shop.errors.any? %>
 <div id="error_explanation">
     <ul>

@@ -1,6 +1,6 @@
 <%= @review.shop.name %>
  
-<%= form_with model: @review, class: "edit_form" do |f| %>
+<%= form_with model: @review, url: user_review_path, class: "edit_form" do |f| %>
     <%= f.label :content %>
     <%= f.text_area :content%>
     <%= f.submit "Update Review" %>

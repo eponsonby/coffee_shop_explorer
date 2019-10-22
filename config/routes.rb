@@ -12,12 +12,19 @@ Rails.application.routes.draw do
 
    
    resources :users, only: [:show] do
-    resources :reviews, only: [:show, :index, :new, :create, :edit, :update, :destroy]
+    resources :reviews, only: [:show, :index, :edit, :update, :destroy]
    end
+
+   resources :shops, only: [:show, :new, :create, :edit, :update]
+   
+   resources :shops, only: [:show] do
+    resources :reviews, only: [:new, :create]
+   end
+
 
    resources :users, only: [:show] do
     resources :favorites, only: [:show, :index, :new, :create, :edit, :update, :destroy]
    end
 
-   resources :shops, only: [:show, :new, :create, :edit, :update]
+   
 end

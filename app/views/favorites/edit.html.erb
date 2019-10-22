@@ -1,0 +1,7 @@
+<%= form_with model: @favorite, url: user_favorite_path, class: "edit_favorite_form" do |f| %>
+    <% options = options_from_collection_for_select(@shops, 'id', 'name') %>
+    <%= f.select :shop_id, options, :selected => params[:shop_id] %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit "Update Favorite" %>
+<% end %>

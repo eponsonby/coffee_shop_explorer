@@ -7,12 +7,12 @@ class ReviewsController < ApplicationController
     def new
         @review = Review.new
         @user = current_user
-        @shops = Shop.all
+        @shop = Shop.find_by(id: params[:shop_id])
     end
 
     def create
         @review = Review.new(review_params)
-        @shop = Shop.find_by(id: params[:review][:shop_id])
+        @shop = Shop.find_by(id: params[:shop_id])
         if @review.save
             redirect_to shop_path(@shop)
         else
