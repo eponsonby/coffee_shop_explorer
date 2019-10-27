@@ -13,12 +13,12 @@ class FavoritesController < ApplicationController
     def new
         @favorite = Favorite.new
         @shops = Shop.all
-        @user = current_user
     end
 
     def create
         @favorite = Favorite.new(favorite_params)
-        if @favorite.save
+        if @favorite.valid?
+            @favorite.save
             redirect_to user_favorites_path(@favorite)
         else
             render :new

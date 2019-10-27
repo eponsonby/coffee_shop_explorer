@@ -2,6 +2,6 @@
     <% options = options_from_collection_for_select(@shops, 'id', 'name') %>
     <%= f.select :shop_id, options, :selected => params[:shop_id] %>
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, required: true %>
     <%= f.submit "Update Favorite" %>
 <% end %>
