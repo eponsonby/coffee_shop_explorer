@@ -29,7 +29,7 @@
 
 <div class="home_page_table">
     <table>
-    <% @shops.order("LOWER(name)").each do |shop| %>
+    <% @shops.order(:neighborhood).each do |shop| %>
     <tr>
         <td colspan="2" class="shop-name"><%= link_to shop.name, shop_path(shop) %></td>
     <tr>

@@ -64,3 +64,5 @@ gem "dotenv-rails", "~> 2.7"
 gem "devise", "~> 4.7"
 
 gem "pry", "~> 0.12.2"
+
+gem "brakeman", "~> 4.7"
