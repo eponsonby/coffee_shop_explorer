@@ -19,16 +19,15 @@ class ShopsController < ApplicationController
     end
 
     def show
-        @user = current_user
-        @shop = Shop.find_by(id: params[:id])
+        @shop = find_shop
     end
 
     def edit
-        @shop = Shop.find_by(id: params[:id])
+        @shop = find_shop
     end
 
     def update
-        @shop = Shop.find_by(id: params[:id])
+        @shop = find_shop
         @shop.update(shop_params)
         if @shop.valid?
             @shop.save
@@ -53,6 +52,11 @@ class ShopsController < ApplicationController
             :address_state,
             :address_zipcode
         )
+    end
+
+    def find_shop
+        shop = Shop.find_by(id: params[:id])
+        shop
     end
 
 

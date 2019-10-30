@@ -4,11 +4,7 @@ class FavoritesController < ApplicationController
         @shops = Shop.all
         @favorites = User.find_by(id: current_user.id).favorites
     end
-    
-    def show
-        @favorite = Favorite.find(params[:id])
-        @shop_name = @favorite.favorite_shop.name
-    end
+
 
     def new
         @favorite = Favorite.new
@@ -26,18 +22,18 @@ class FavoritesController < ApplicationController
     end
 
     def edit
-        @favorite = Favorite.find_by(id: params[:id])
+        @favorite = find_favorite
         @shops = Shop.all
     end
 
     def update
-        @favorite = Favorite.find_by(id: params[:id])
+        @favorite = find_favorite
         @favorite.update(shop_id: params[:favorite][:shop_id], name: params[:favorite][:name])
         redirect_to user_favorites_path(@favorite)
     end
 
     def destroy
-        @favorite = Favorite.find_by(id: params[:id])
+        @favorite = find_favorite
         @favorite.destroy
         redirect_to user_favorites_path(@favorite)
     end
@@ -45,6 +41,11 @@ class FavoritesController < ApplicationController
     private
     def favorite_params
         params.require(:favorite).permit(:shop_id, :name, :user_id)
+    end
+
+    def find_favorite
+        favorite = Favorite.find_by(id: params[:id])
+        favorite
     end
 
 
