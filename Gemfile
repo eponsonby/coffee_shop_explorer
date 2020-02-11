@@ -66,3 +66,6 @@ gem "devise", "~> 4.7"
 gem "pry", "~> 0.12.2"
 
 gem "brakeman", "~> 4.7"
+
+gem "nio4r", "~> 2.5.2"
+
