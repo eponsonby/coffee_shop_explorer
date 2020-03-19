@@ -5,6 +5,12 @@ jobs:
       - image: circleci/ruby:2.6.0-node
     steps:
       - checkout
+      
+      - run:
+          name: install dependencies
+          command: |
+            gem update --system
+            gem install bundler
 
       - run:
           name: Which bundler?
