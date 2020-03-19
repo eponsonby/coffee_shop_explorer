@@ -2,10 +2,10 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.6.0-node
+      - image: circleci/ruby:2.6.1-node
     steps:
       - checkout
-      
+
       - run:
           name: install dependencies
           command: |
@@ -18,7 +18,7 @@ jobs:
 
       - run: # Install Ruby dependencies
           name: Bundle Install
-          command: bundle check --path vendor/bundle || bundle install --deployment
+          command: bundle config set path 'vendor/bundle' || bundle config set deployment 'true'
       - run:
           name: Yarn Install
           command: yarn install --cache-folder ~/.cache/yarn
